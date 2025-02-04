@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Messi",
+    "role": "Right-Wing"
+  },
+  {
+    "id": 2,
+    "name": "Suarez",
+    "role": "Central-Striker"
+  },
+  {
+    "id": 3,
+    "name": "Neymar",
+    "role": "Left-Wing"
+  }
+]
