@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+</head>
+<body>
+
+    <!-- Button -->
+    <button id="myButton">Click Me</button>
+
+    <!-- Link JavaScript -->
+    <script>
+        // Select the button
+        let button = document.getElementById("myButton");
+
+        function normalFunction() {
+            console.log("Normal Function: " + this.textContent);
+        }
+
+        // Arrow function 
+        const arrowFunction = () => {
+            console.log("Arrow Function: " + this.textContent);
+        };
+
+        // Add event listeners
+        button.addEventListener("click", normalFunction);
+        button.addEventListener("click", arrowFunction);
+    </script>
+
+</body>
+</html>
