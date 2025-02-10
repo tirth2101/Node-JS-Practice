@@ -7,7 +7,7 @@ console.log("Initial person object:", person);
 
 // Modifying properties of a const object 
 person.age = 22;
-console.log("Modified person object:", person
+console.log("Modified person object:", person);
 
 // Eg. 2 - Const with arrays
 const num = [1, 2, 3, 4];
