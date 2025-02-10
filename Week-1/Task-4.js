@@ -1,4 +1,3 @@
-//Task-4
 // Eg. 1 - Function Scope vs Block Scope
 function scopeTest() {
     if (true) {
@@ -15,22 +14,18 @@ function scopeTest() {
 scopeTest();
 
 // Eg. 2 - Redeclaration and Reassignment
-
 var a = 10;
 var a = 20; // Allowed: var can be redeclared
 
-let b = 30;
-// let b = 40; // Error: let cannot be redeclared in the same scope
+let b = 30; // let b = 40; // Error: let cannot be redeclared in the same scope
 
-const c = 50;
-// c = 60; // Error: const cannot be reassigned
+const c = 50; // c = 60; // Error: const cannot be reassigned
 
 console.log(a); // 20
 console.log(b); // 30
 console.log(c); // 50
 
-// Example 3: Hoisting Behavior
-
+// Eg. 3 - Hoisting Behavior
 console.log(hoistedVar); // Undefined (var is hoisted)
 var hoistedVar = "Var used for Hoisting";
 
