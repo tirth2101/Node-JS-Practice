@@ -1,0 +1,61 @@
+BEST PRACTICES FOR VARIABLE DECLARATION IN JAVASCRIPT :
+
+Introduction -
+Proper variable declaration is essential for writing clean, maintainable, and bug-free JavaScript code. This document higlights the best practices for using let, var, and const while considering block scoping, hoisting, and immutability.
+
+  
+Choosing Between let, var, and const -
+1. Use const by Default :-
+  a. const should be the default choice for declaring variables.
+  b. It ensures immutability, preventing accidental reassignment.
+  c. Use const when the value should not change after initialization.
+
+Example:
+const users = 100;
+const API_url = "https://api.url.com";
+
+2. Use let When Reassignment is Needed :-
+  a. let allows variable reassignment but is block-scoped.
+  b. Use let only if you expect the variable's value to change.
+
+Example:
+let number = 0;
+number += 1;
+
+3. Avoid var in Modern JavaScript :-
+  a. var is function-scoped, which can lead to unintended bugs.
+  b. var variables are hoisted but remain undefined until assigned.
+  c. Prefer let or const instead.
+
+Bad Example (Using var):
+function example() {
+    if (true) {
+        var test = "Accessible outside the function";
+    }
+    console.log(test); // No error, but bad practice!
+}
+example();
+
+
+Understanding Block Scoping -
+  1. let and const are block-scoped, meaning they are accessible only within the {} block where they are defined.
+  2. var does not have block scope, leading to potential issues.
+
+Example:
+if (true) {
+    let blockScoped = "I exist only inside this block";
+    const alsoBlockScoped = "Me too!";
+}
+// console.log(blockScoped); // Error: blockScoped is not defined
+
+
+Hoisting Behavior - 
+  1. var is hoisted but initialized as undefined.
+  2. let and const are hoisted but remain in a "temporal dead zone" until assigned.
+
+Example:
+console.log(hoistedVar); 
+var hoistedVar = "hoisted";
+
+// console.log(hoistedLet); 
+let hoistedLet = "not accessible before declaration";
