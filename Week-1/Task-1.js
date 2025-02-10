@@ -3,7 +3,7 @@ const num = [1,2,3,4,5,6,7,8];
 
 // Iterate through the array using a for loop
 for (let i = 0; i < num.length; i++) {
-    console.log("Before control flow:", num[i]); 
+    console.log("Before condition:", num[i]); 
 
     // Skip the iteration if the number is exactly 3
     if (num[i] === 3) {
@@ -15,5 +15,5 @@ for (let i = 0; i < num.length; i++) {
         break;
     }
 
-    console.log("After control flow:", num[i]); 
+    console.log("After condition:", num[i]); 
 }
