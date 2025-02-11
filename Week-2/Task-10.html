@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Fetch</title>
+</head>
+<body>
+    <h2>Users List</h2>
+    <button onclick="fetchData()">Fetch Users</button>
+    <ul id="userList"></ul>
+
+    <script>
+        function fetchData() {
+            const apiUrl = "https://jsonplaceholder.typicode.com/users"; // Public API URL
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP Error! Status: ${response.status}`);
+                    }
+                    return response.json(); // Convert response to JSON
+                })
+                .then(data => {
+                    displayData(data); // Call function to display data
+                })
+                .catch(error => {
+                    document.getElementById("userList").innerHTML = `<li style="color:red;">Error: ${error.message}</li>`;
+                });
+        }
+
+        function displayData(users) {
+            const userList = document.getElementById("userList");
+            userList.innerHTML = ""; // Clear previous data
+
+            users.forEach(user => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${user.name} - ${user.email}`;
+                userList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

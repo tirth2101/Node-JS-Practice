@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <h2>Posts from API</h2>
+    <button onclick="fetchData()">Load Data</button>
+    <div id="output"></div>
+
+    <script>
+        function fetchData() {
+            const url = "https://jsonplaceholder.typicode.com/posts";
+
+            fetch(url) // Make API request
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json(); // Convert response to JSON
+                })
+                .then(data => {
+                    displayData(data); // Call function to display data
+                })
+                .catch(error => {
+                    document.getElementById("output").innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
